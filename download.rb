@@ -3,12 +3,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'HTTParty'
 
-urls = []
-file = File.new("data.txt", "r")
-while (line = file.gets)
-  urls << line.chomp
-end
-file.close
+urls = IO.readlines("data.txt").map {|line| line.chomp}
 
 count = 1
 urls.each do |url|
