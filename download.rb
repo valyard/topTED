@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
-require 'HTTParty'
+require 'httparty'
 
 urls = IO.readlines("data.txt").map {|line| line.chomp}
 if !File.exists?("videos")
